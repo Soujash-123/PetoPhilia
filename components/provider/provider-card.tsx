@@ -24,7 +24,7 @@ interface ProviderCardProps {
 }
 
 export function ProviderCard({ provider, className }: ProviderCardProps) {
-  const uniqueTypes = [...new Set(provider.services.map((s) => s.type))]
+  const uniqueTypes = Array.from(new Set(provider.services.map((s) => s.type)))
   const minPrice = Math.min(...provider.services.map((s) => s.price))
 
   return (
